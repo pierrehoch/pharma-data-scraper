@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Review ingredient mapping{% endblock %}
+{% block content %}
+<p><a href="/dashboard/ingredients">Back to ingredient queue</a></p>
+<h1>Review ingredient mapping</h1>
+{% if updated is not none %}<p class="card" role="status">Mapping updated. {{ updated }} products re-resolved.</p>{% endif %}
+<div class="card"><strong>{{ product.source_id }}</strong><p>{{ product.ingredient or "(no ingredient wording)" }}</p><b>{{ count }} products</b></div>
+<p>Save only a verified identity. For combinations, select <strong>every active ingredient</strong>. This replaces the complete mapping for this exact source label; it does not change source text, prices, or other sources. Salts should retain their exact substance identity when available.</p>
+<h2>Product examples and current mappings</h2>
+<table>
+<tr><th>Product</th><th>Source evidence</th><th>Current resolution</th></tr>
+{% for example, metadata in examples %}
+<tr>
+  <td><a href="/dashboard/data/{{ example.id }}">{{ example.name or example.product_code }}</a><div class="small">{{ example.product_code }} &middot; {{ example.strength_text or "" }} &middot; {{ example.pack_text or "" }}</div></td>
+  <td>{% if example.detail_url and example.detail_url.startswith(('https://', 'http://')) %}<a href="{{ example.detail_url }}" target="_blank" rel="noopener noreferrer">Open source</a>{% endif %} {{ example.notes or "" }}</td>
+  <td>{% for mapping in metadata.ingredient_mappings %}<div>{{ mapping.name }} ({{ mapping.method }})</div>{% endfor %}
+    {% if metadata.ingredient_resolution %}{{ metadata.ingredient_resolution.status }}: {{ metadata.ingredient_resolution.reason }}{% else %}Not yet resolved{% endif %}</td>
+</tr>
+{% endfor %}
+</table>
+{% if product.ingredient and product.ingredient.strip() %}
+<h2>Canonical ingredient picker</h2>
+<form class="filters" id="ingredient-search" method="get">
+  <label>Find an existing ingredient<input name="search" value="{{ search }}" placeholder="ingredient name or translated alias" size="40"></label>
+  <button>Search dictionary</button>
+</form>
+<p class="small">Searches use the installed dictionary. Choosing ingredients does not save until you submit the reviewed mapping. Review ingredient identity and evidence; suggestion counts are not verification.</p>
+<form method="post" id="review-form">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <input type="hidden" name="revision" value="{{ revision }}">
+  <div id="selected-ingredients">
+  {% for item in selected %}<label style="display:block"><input type="checkbox" name="ingredient_ids" value="{{ item.id }}" data-name="{{ item.name }}" checked> {{ item.name }} <span class="small">{{ item.id }}</span></label>{% endfor %}
+  </div>
+  {% if suggestions %}
+  <table>
+  <tr><th>Select</th><th>Canonical ingredient</th><th>Matching alias</th><th>Identity</th></tr>
+  {% for item in suggestions["items"] %}
+  <tr><td><input aria-label="Select {{ item.name }}" type="checkbox" name="ingredient_ids" value="{{ item.id }}" data-name="{{ item.name }}" {% if item.id in selected | map(attribute='id') | list %}checked{% endif %}></td><td>{{ item.name }}</td><td>{{ item.matched_alias }} ({{ item.language }})</td><td>{{ item.id }}
+    {% for identifier in identifiers.get(item.id, []) %}<div>{{ identifier.namespace }}: {{ identifier.value }}
+      {% if identifier.evidence.startswith(('https://', 'http://')) %}<a href="{{ identifier.evidence }}" target="_blank" rel="noopener noreferrer">Evidence</a>{% else %}<span class="small">{{ identifier.evidence }}</span>{% endif %}
+    </div>{% endfor %}
+    {% if item.family_id %}<div class="small">Documented parent: {{ item.family_id }}</div>{% endif %}</td></tr>
+  {% else %}<tr><td colspan="4">No dictionary match. Install verified dictionary entries before mapping this label; do not select an unrelated ingredient.</td></tr>{% endfor %}
+  </table>
+  <p class="pager">{{ suggestions.total }} matches
+  {% if suggestions.page > 1 %}<a class="dictionary-page" href="?{{ query }}&page={{ suggestions.page - 1 }}">Previous</a>{% endif %}
+  {% if suggestions.page < suggestions.pages %}<a class="dictionary-page" href="?{{ query }}&page={{ suggestions.page + 1 }}">Next</a>{% endif %}</p>
+  {% endif %}
+  <p><label>Evidence URL or review note (required)<br><textarea name="evidence" id="evidence" rows="3" cols="70" required>{{ override.evidence if override else "" }}</textarea></label></p>
+  <button class="primary" name="action" value="save">Save reviewed mapping for {{ count }} products</button>
+  {% if override %}<button class="danger" name="action" value="delete" formnovalidate onclick="return confirm('Remove this reviewed mapping and re-run automatic resolution for all {{ count }} products?')">Remove reviewed mapping</button>{% endif %}
+</form>
+<script>
+(() => {
+  const form = document.getElementById('review-form');
+  const key = 'ingredient-review:{{ product.id }}:{{ revision }}';
+  const boxes = () => [...form.querySelectorAll('input[name="ingredient_ids"]')];
+  const evidence = document.getElementById('evidence');
+  let stored;
+  try {
+    if (new URLSearchParams(location.search).has('updated')) {
+      for (const existing of Object.keys(sessionStorage)) {
+        if (existing.startsWith('ingredient-review:{{ product.id }}:')) sessionStorage.removeItem(existing);
+      }
+    }
+    stored = JSON.parse(sessionStorage.getItem(key));
+  } catch (error) {
+    console.warn('Could not restore ingredient review draft', error);
+  }
+  if (stored && !new URLSearchParams(location.search).has('updated')) {
+    const wanted = new Map(stored.ingredients.map(item => [item.id, item.name]));
+    for (const [id, name] of wanted) {
+      if (!boxes().some(box => box.value === id)) {
+        const label = document.createElement('label');
+        label.style.display = 'block';
+        const box = document.createElement('input');
+        box.type = 'checkbox'; box.name = 'ingredient_ids'; box.value = id; box.dataset.name = name;
+        label.append(box, document.createTextNode(' ' + name));
+        document.getElementById('selected-ingredients').append(label);
+      }
+    }
+    boxes().forEach(box => { box.checked = wanted.has(box.value); });
+    evidence.value = stored.evidence;
+  }
+  function persist() {
+    const unique = new Map(boxes().filter(box => box.checked).map(box => [box.value, {id: box.value, name: box.dataset.name}]));
+    try { sessionStorage.setItem(key, JSON.stringify({ingredients: [...unique.values()], evidence: evidence.value})); }
+    catch (error) { console.warn('Could not save ingredient review draft; keep this page open', error); }
+  }
+  form.addEventListener('change', event => {
+    if (event.target.name === 'ingredient_ids') {
+      boxes().filter(box => box.value === event.target.value).forEach(box => { box.checked = event.target.checked; });
+    }
+    persist();
+  });
+  evidence.addEventListener('input', persist);
+  document.getElementById('ingredient-search').addEventListener('submit', persist);
+  document.querySelectorAll('.dictionary-page').forEach(link => link.addEventListener('click', persist));
+  form.addEventListener('submit', event => {
+    if (event.submitter.value === 'save' && (!boxes().some(box => box.checked) || !evidence.value.trim())) {
+      event.preventDefault();
+      alert('Select every active ingredient and provide evidence or a review note.');
+    }
+  });
+})();
+</script>
+{% else %}
+<p class="alert">The source has no ingredient wording. This queue cannot safely map an empty label to a substance. Obtain structured source evidence first.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{
+ "apiVersion": "1",
+ "releases": [
+  {
+   "id": "nhsbsa_dmd_9.2.0_20260928000001.zip",
+   "name": "Release 9.2.0",
+   "releaseDate": "2026-09-28",
+   "archiveFileUrl": "https://isd.digital.nhs.uk/download/api/v1/keys/KEY/content/items/24/nhsbsa_dmd_9.2.0_20260928000001.zip",
+   "archiveFileName": "nhsbsa_dmd_9.2.0_20260928000001.zip",
+   "archiveFileSha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  }
+ ],
+ "httpStatus": 200,
+ "message": "OK"
+}

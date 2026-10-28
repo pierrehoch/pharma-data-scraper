@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{% block title %}Drug price platform{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --ok:#1a7f37; --warn:#9a6700; --err:#cf222e; --info:#0969da; --muted:#6e7781; --bg:#f6f8fa; }
+  * { box-sizing: border-box; }
+  body { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; color: #1f2328; }
+  header { background: #24292f; color: #fff; padding: 10px 24px; display: flex; gap: 22px; align-items: center; }
+  header a { color: #d0d7de; text-decoration: none; } header a:hover { color: #fff; }
+  header strong { margin-right: 16px; }
+  main { padding: 20px 24px; }
+  h1 { font-size: 20px; margin: 4px 0 16px; } h2 { font-size: 16px; margin: 24px 0 8px; }
+  table { border-collapse: collapse; width: 100%; background: #fff; }
+  th, td { border-bottom: 1px solid #d0d7de; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--bg); font-weight: 600; white-space: nowrap; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; color: #fff; }
+  .ok { background: var(--ok); } .warn { background: var(--warn); } .err { background: var(--err); } .info { background: var(--info); } .muted { background: var(--muted); }
+  .t-ok { color: var(--ok); } .t-warn { color: var(--warn); } .t-err { color: var(--err); } .t-muted { color: var(--muted); }
+  .cards { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .card { background: var(--bg); border: 1px solid #d0d7de; border-radius: 6px; padding: 10px 14px; min-width: 140px; }
+  .card b { display: block; font-size: 20px; }
+  form.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; align-items: end; }
+  form.filters label { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); }
+  input, select, button, textarea { font: inherit; padding: 4px 8px; }
+  button { cursor: pointer; border: 1px solid #d0d7de; border-radius: 6px; background: #fff; }
+  button.primary { background: var(--ok); color: #fff; border-color: var(--ok); }
+  button.danger { background: var(--err); color: #fff; border-color: var(--err); }
+  pre { background: var(--bg); padding: 8px; overflow: auto; max-height: 240px; font-size: 12px; margin: 4px 0; }
+  .small { font-size: 12px; color: var(--muted); }
+  .alert { border: 1px solid var(--err); background: #ffebe9; padding: 8px 12px; border-radius: 6px; margin: 8px 0; }
+  .pager a { margin-right: 8px; }
+  .diff { color: var(--err); font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <strong>💊 Drug price platform</strong>
+  <a href="/dashboard">Sources</a>
+  <a href="/dashboard/jobs">Jobs</a>
+  <a href="/dashboard/errors">Errors</a>
+  <a href="/dashboard/data">Data</a>
+  <a href="/dashboard/ingredients">Ingredients</a>
+  <a href="/docs">API</a>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+</body>
+</html>

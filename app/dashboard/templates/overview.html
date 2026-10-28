@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Sources</h1>
+{% if run %}
+<h2>Last run <a href="/dashboard/jobs?run_id={{ run.id }}" class="small">{{ run.id }}</a>
+  <span class="small">{{ fmt(run.started_at) }} – mode {{ run.mode }}{% if run.limit %}, limit {{ run.limit }}{% endif %} – {{ run.command or "" }}</span></h2>
+{% if totals %}
+<div class="cards">
+  <div class="card"><b>{{ totals.sources_discovered }}</b>sources discovered</div>
+  <div class="card"><b>{{ totals.sources_downloaded }}</b>downloaded</div>
+  <div class="card"><b>{{ totals.sources_partially_supported }}</b>partially supported</div>
+  <div class="card"><b>{{ totals.sources_unsupported }}</b>unsupported</div>
+  <div class="card"><b>{{ "{:,}".format(totals.records_downloaded) }}</b>raw records</div>
+  <div class="card"><b>{{ "{:,}".format(totals.records_parsed) }}</b>parsed</div>
+  <div class="card"><b>{{ "{:,}".format(totals.records_normalized) }}</b>normalized</div>
+  <div class="card"><b>{{ "{:,}".format(totals.prices_published) }}</b>new prices</div>
+  <div class="card"><b>{{ "{:,}".format(totals.validation_warnings) }}</b>validation warnings</div>
+  <div class="card"><b class="{% if totals.errors %}t-err{% endif %}">{{ totals.errors }}</b>errors</div>
+</div>
+{% endif %}
+{% endif %}
+
+<table>
+<tr>
+  <th>Source</th><th>Country</th><th>Enabled</th><th>Adapter status</th><th>Last run</th><th>Last successful run</th>
+  <th>Status</th><th class="num">Records</th><th class="num">Errors</th><th>Schema</th><th>Next expected update</th>
+</tr>
+{% for r in rows %}
+{% set s = r.source %}{% set j = r.last_job %}
+<tr>
+  <td><a href="/dashboard/sources/{{ s.id }}">{{ s.name }}</a><div class="small">{{ s.id }}</div></td>
+  <td>{{ s.country }}{% if s.coverage_scope != "national" %}<div class="small">{{ s.coverage_scope }}</div>{% endif %}</td>
+  <td>{{ "yes" if s.enabled else "no" }}</td>
+  <td><span class="badge {{ 'ok' if s.adapter_status == 'supported' else ('warn' if s.adapter_status == 'partially_supported' else 'muted') }}">{{ s.adapter_status }}</span></td>
+  <td>{% if j %}<a href="/dashboard/jobs/{{ j.id }}">{{ fmt(j.started_at)[:16] }}</a><div class="small">{{ j.mode }}{% if j.limit %} · limit {{ j.limit }}{% endif %}</div>{% else %}<span class="t-muted">never</span>{% endif %}</td>
+  <td>{{ fmt(r.last_success.started_at)[:16] if r.last_success else "—" }}</td>
+  <td>{% if j %}<span class="badge {{ status_class.get(j.status, 'muted') }}">{{ j.status | upper }}</span>{% endif %}
+      {% if r.missing_configuration %}<div class="t-err small">credentials / configuration missing</div>{% endif %}</td>
+  <td class="num">{{ "{:,}".format(j.records_normalized) if j else "" }}<div class="small"><a href="/dashboard/data?source_id={{ s.id }}">{{ "{:,}".format(r.products) }} products · {{ "{:,}".format(r.prices) }} prices</a></div></td>
+  <td class="num {% if j and j.error_count %}t-err{% endif %}">{{ j.error_count if j else "" }}</td>
+  <td>{% if r.schema_status == "CHANGED" %}<span class="badge err">CHANGED</span>{% else %}{{ r.schema_status }}{% endif %}</td>
+  <td>{% if r.next_expected_update %}<span class="{{ 't-err' if r.overdue else '' }}">{{ fmt(r.next_expected_update)[:10] }}{% if r.overdue %} (overdue){% endif %}</span>{% else %}{{ s.expected_frequency }}{% endif %}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

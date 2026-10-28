@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Job {{ job.id }} <span class="badge {{ status_class.get(job.status, 'muted') }}">{{ job.status | upper }}</span></h1>
+<p class="small">
+  Source <a href="/dashboard/sources/{{ job.source_id }}">{{ job.source_id }}</a> · mode {{ job.mode }}
+  {% if job.limit %}· limit {{ job.limit }}{% endif %}{% if job.product_ids %}· product ids {{ job.product_ids | join(", ") }}{% endif %}
+  · started {{ fmt(job.started_at)[:19] }} · duration {{ "%.1f"|format(job.duration_seconds) if job.duration_seconds is not none else "running" }} s
+  {% if job.resumed_from_job_id %}· resumed from <a href="/dashboard/jobs/{{ job.resumed_from_job_id }}">{{ job.resumed_from_job_id[:8] }}</a>{% endif %}
+</p>
+{% if job.mode == "dry_run" %}<div class="alert">Dry-run: the database was not modified.</div>{% endif %}
+
+<div class="cards">
+  <div class="card"><b>{{ job.records_total_in_source if job.records_total_in_source is not none else "?" }}</b>rows in source file</div>
+  <div class="card"><b>{{ job.records_downloaded }}</b>raw records (scope)</div>
+  <div class="card"><b>{{ job.records_parsed }}</b>parsed</div>
+  <div class="card"><b>{{ job.records_normalized }}</b>normalized</div>
+  <div class="card"><b>{{ job.records_published }}</b>products</div>
+  <div class="card"><b>{{ job.prices_published }}</b>new prices <span class="small">({{ job.prices_unchanged }} unchanged)</span></div>
+  <div class="card"><b>{{ job.validation_warnings }}</b>warnings</div>
+  <div class="card"><b class="{% if job.error_count %}t-err{% endif %}">{{ job.error_count }}</b>errors</div>
+  <div class="card"><b>{{ job.records_failed }}</b>failed rows</div>
+</div>
+
+<h2>Stages</h2>
+<table>
+<tr><th></th><th>Stage</th><th>Status</th><th class="num">Duration (s)</th><th>Metrics</th><th>Message</th></tr>
+{% for s in job.stages or [] %}
+<tr>
+  <td class="{{ 't-ok' if s.status == 'success' else ('t-warn' if s.status == 'warning' else ('t-err' if s.status == 'failed' else 't-muted')) }}" style="font-size:16px">{{ stage_icon.get(s.status, "?") }}</td>
+  <td>{{ s.name | replace("_", " ") | capitalize }}</td>
+  <td>{{ s.status }}</td>
+  <td class="num">{{ s.duration_seconds if s.duration_seconds is defined else "" }}</td>
+  <td class="small">{% for k, v in (s.metrics or {}).items() %}{% if v is not mapping and (v is string or v is number or v is boolean or v is none) %}{{ k }}={{ v }} {% endif %}{% endfor %}</td>
+  <td class="small">{{ s.message or "" }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% if job.artifact %}
+<h2>Artifact (discovery)</h2>
+<table>
+  <tr><th>Edition</th><td>{{ job.artifact.edition or "—" }} (published {{ job.artifact.published_at or "unknown" }})</td></tr>
+  <tr><th>Discovered from</th><td class="small">{{ job.artifact.discovered_from }}</td></tr>
+  {% for f in job.artifact.files or [] %}<tr><th>{{ f.role }}</th><td class="small">{{ f.url }}</td></tr>{% endfor %}
+  {% for n in job.artifact.notes or [] %}<tr><th>note</th><td class="small">{{ n }}</td></tr>{% endfor %}
+  <tr><th>Snapshot</th><td class="small">{{ job.snapshot_id or "—" }}</td></tr>
+</table>
+{% endif %}
+
+<h2>Errors & warnings <span class="small">{% for k, v in counts.items() %}{{ k }}: {{ v }} {% endfor %}</span></h2>
+<table>
+<tr><th>Severity</th><th>Type</th><th>Stage</th><th>Row</th><th>Message</th></tr>
+{% for e in errors %}
+<tr>
+  <td><span class="badge {{ 'err' if e.severity == 'error' else ('warn' if e.severity == 'warning' else 'muted') }}">{{ e.severity }}</span></td>
+  <td>{{ e.error_type }}</td><td>{{ e.stage or "" }}</td><td class="small">{{ e.row_ref or "" }}</td>
+  <td>{{ e.message }}{% if e.details %}<details><summary class="small">details</summary><pre>{{ e.details | tojson(indent=2) }}</pre></details>{% endif %}</td>
+</tr>
+{% else %}<tr><td colspan="5" class="t-muted">No error</td></tr>{% endfor %}
+</table>
+<p class="small"><a href="/dashboard/errors?job_id={{ job.id }}">All errors of this job →</a></p>
+{% endblock %}

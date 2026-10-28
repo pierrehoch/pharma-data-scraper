@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Jobs</h1>
+<form class="filters" method="get">
+  <label>Source<select name="source_id"><option value="">all</option>{% for s in sources %}<option {% if f.source_id == s %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></label>
+  <label>Status<select name="status"><option value="">all</option>{% for s in statuses %}<option {% if f.status == s %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></label>
+  <button>Filter</button>
+</form>
+{% set jobs = res["items"] %}
+{% include "_jobs_table.html" %}
+<p class="pager">{{ res.total }} jobs · page {{ res.page }}/{{ res.pages or 1 }}
+{% if res.page > 1 %}<a href="?page={{ res.page - 1 }}&source_id={{ f.source_id or '' }}&status={{ f.status or '' }}">← previous</a>{% endif %}
+{% if res.page < res.pages %}<a href="?page={{ res.page + 1 }}&source_id={{ f.source_id or '' }}&status={{ f.status or '' }}">next →</a>{% endif %}</p>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Data</h1>
+<form class="filters" method="get">
+  <label>Search<input name="q" value="{{ f.q or '' }}" placeholder="name, code, ingredient, brand" size="28"></label>
+  <label>Ingredient<input name="ingredient" value="{{ f.ingredient or (selected_ingredient.name if selected_ingredient else '') }}" placeholder="search ingredient alias" size="24"></label>
+  <label>Ingredient choice<select name="ingredient_id">
+    <option value="">choose only an exact suggestion</option>
+    {% if selected_ingredient %}<option value="{{ selected_ingredient.id }}" selected>{{ selected_ingredient.name }} · selected</option>{% endif %}
+    {% for item in ingredient_choices %}<option value="{{ item.id }}" {% if f.ingredient_id == item.id %}selected{% endif %}>{{ item.name }} — {{ item.matched_alias }} ({{ item.language }})</option>{% endfor %}
+  </select></label>
+  <label>Source<select name="source_id"><option value="">all</option>{% for s in sources %}<option {% if f.source_id == s %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></label>
+  <label>Country<select name="country"><option value="">all</option>{% for c in countries %}<option {% if f.country == c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></label>
+  <label>Price type<select name="price_type"><option value="">all</option>{% for t in price_types %}<option {% if f.price_type == t %}selected{% endif %}>{{ t }}</option>{% endfor %}</select></label>
+  <label>History<span><input type="checkbox" name="history" value="true" {% if f.history %}checked{% endif %}> include past prices</span></label>
+  <label>Warnings<span><input type="checkbox" name="verified_only" value="true" {% if f.verified_only %}checked{% endif %}> hide prices published with warnings</span></label>
+  <button>Filter</button>
+  <a href="/prices.csv?{{ csv_query }}">Download CSV (all fields)</a>
+</form>
+{% if selected_ingredient %}<p class="small">Ingredient: <strong>{{ selected_ingredient.name }}</strong> ({{ selected_ingredient.id }})</p>
+{% elif ingredient_choices %}<p class="small">Choose a complete ingredient concept; partial or ambiguous text is not applied as a filter.</p>
+{% elif f.ingredient %}<p class="small">No exact or partial ingredient aliases found; no ingredient filter was applied.</p>{% endif %}
+<table>
+<tr>{% for _, label in columns %}<th>{{ label }}</th>{% endfor %}</tr>
+{% for r in rows %}
+<tr>
+{% for c, _ in columns %}
+  {% set v = r[c] %}
+  {% if c == "name" %}<td><a href="/dashboard/data/{{ r.product_id }}">{{ v or "(no name)" }}</a>{% if r.strength_text or r.pack_text %}<div class="small">{{ r.strength_text or "" }}{% if r.pack_text and r.pack_text != r.strength_text %} · {{ r.pack_text }}{% endif %}</div>{% endif %}</td>
+  {% elif c == "ingredient" %}<td>{{ v or "" }}
+    {% for mapping in r.ingredient_mappings %}<div class="small">{{ mapping.name }} <span class="t-muted">({{ mapping.ingredient_id }})</span></div>{% endfor %}
+    {% if r.ingredient_resolution %}<div class="small">Mapping: {{ r.ingredient_resolution.status }}{% if r.ingredient_resolution.reason %} — {{ r.ingredient_resolution.reason }}{% endif %}</div>{% endif %}
+  </td>
+  {% elif c == "amount" %}<td class="num">{{ fmt(v) if v is not none else "" }}{% if r.quality_flags %} <span class="badge warn" title="{{ r.quality_warnings | join(' · ') }}">⚠</span>{% endif %}</td>
+  {% elif c == "quality_flags" %}<td>{% for flag in v or [] %}<span class="badge warn" title="{{ flag_labels.get(flag, flag) }}">{{ flag }}</span> {% endfor %}</td>
+  {% elif v is sameas true %}<td>yes</td>{% elif v is sameas false %}<td>no</td>
+  {% else %}<td>{{ fmt(v) if v is not none else "" }}</td>{% endif %}
+{% endfor %}
+</tr>
+{% else %}<tr><td colspan="{{ columns | length }}" class="t-muted">No data matches the filters</td></tr>{% endfor %}
+</table>
+<p class="pager">{{ "{:,}".format(res.total) }} rows · page {{ res.page }}/{{ res.pages or 1 }}
+{% if res.page > 1 %}<a href="?page={{ res.page - 1 }}&{{ query }}">← previous</a>{% endif %}
+{% if res.page < res.pages %}<a href="?page={{ res.page + 1 }}&{{ query }}">next →</a>{% endif %}</p>
+{% endblock %}

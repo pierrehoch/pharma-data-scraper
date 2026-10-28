@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formulary effectiveDate="2026-09-29">
+ <pcg2 id="240000">
+  <pcg6 id="240606">
+   <genericName>ATORVASTATIN CALCIUM</genericName>
+   <pcgGroup>
+    <pcg9 id="240606001">
+     <strength>10mg</strength>
+     <dosageForm>Tab</dosageForm>
+     <drug id="02230711" notABenefit="N">
+      <name>Lipitor</name>
+      <manufacturerId>UPJ</manufacturerId>
+      <individualPrice>0.4200</individualPrice>
+      <listingDate>1997-01-01</listingDate>
+     </drug>
+     <drug id="02295261" notABenefit="N">
+      <name>Apo-Atorvastatin</name>
+      <manufacturerId>APX</manufacturerId>
+      <individualPrice>0.1302</individualPrice>
+     </drug>
+    </pcg9>
+   </pcgGroup>
+  </pcg6>
+ </pcg2>
+</formulary>

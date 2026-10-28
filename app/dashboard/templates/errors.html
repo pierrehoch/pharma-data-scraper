@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Errors</h1>
+<form class="filters" method="get">
+  <label>Source<select name="source_id"><option value="">all</option>{% for s in sources %}<option {% if f.source_id == s %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></label>
+  <label>Severity<select name="severity"><option value="">all</option>{% for s in severities %}<option {% if f.severity == s %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></label>
+  <label>Type<select name="error_type"><option value="">all</option>{% for t in error_types %}<option {% if f.error_type == t %}selected{% endif %}>{{ t }}</option>{% endfor %}</select></label>
+  <label>Job<input name="job_id" value="{{ f.job_id or '' }}" size="34"></label>
+  <label>From<input type="date" name="date_from" value="{{ f.date_from or '' }}"></label>
+  <label>To<input type="date" name="date_to" value="{{ f.date_to or '' }}"></label>
+  <button>Filter</button>
+</form>
+<table>
+<tr><th>Date</th><th>Source</th><th>Job</th><th>Severity</th><th>Type</th><th>Stage</th><th>Row</th><th>Message</th></tr>
+{% for e in res["items"] %}
+<tr>
+  <td class="small">{{ fmt(e.created_at)[:19] }}</td>
+  <td>{{ e.source_id }}</td>
+  <td><a href="/dashboard/jobs/{{ e.job_id }}">{{ e.job_id[:8] }}</a></td>
+  <td><span class="badge {{ 'err' if e.severity == 'error' else ('warn' if e.severity == 'warning' else 'muted') }}">{{ e.severity }}</span></td>
+  <td>{{ e.error_type }}</td><td>{{ e.stage or "" }}</td><td class="small">{{ e.row_ref or "" }}</td>
+  <td>{{ e.message }}{% if e.details %}<details><summary class="small">details</summary><pre>{{ e.details | tojson(indent=2) }}</pre></details>{% endif %}</td>
+</tr>
+{% else %}<tr><td colspan="8" class="t-muted">No error matches the filters</td></tr>{% endfor %}
+</table>
+<p class="pager">{{ res.total }} entries · page {{ res.page }}/{{ res.pages or 1 }}
+{% set qs = "&source_id=" ~ (f.source_id or "") ~ "&severity=" ~ (f.severity or "") ~ "&error_type=" ~ (f.error_type or "") ~ "&job_id=" ~ (f.job_id or "") ~ "&date_from=" ~ (f.date_from or "") ~ "&date_to=" ~ (f.date_to or "") %}
+{% if res.page > 1 %}<a href="?page={{ res.page - 1 }}{{ qs }}">← previous</a>{% endif %}
+{% if res.page < res.pages %}<a href="?page={{ res.page + 1 }}{{ qs }}">next →</a>{% endif %}</p>
+{% endblock %}

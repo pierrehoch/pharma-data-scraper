@@ -1,0 +1,7 @@
+69118175	AMOXICILLINE BIOGARAN 500 mg, gélule	gélule	orale	Autorisation active	Procédure nationale	Commercialisée	23/02/1995			 GLAXOSMITHKLINE	Non
+60002283	ANASTROZOLE ACCORD 1 mg, comprimé pelliculé	comprimé pelliculé	orale	Autorisation active	Procédure de reconnaissance mutuelle	Commercialisée	28/10/2010			 ACCORD HEALTHCARE FRANCE	Non
+69522513	ATORVASTATINE BIOGARAN 10 mg, comprimé pelliculé	comprimé pelliculé	orale	Autorisation active	Procédure nationale	Commercialisée	24/06/2019			 BIOGARAN	Non
+60003620	BECLOSPIN 800 microgrammes/2ml suspension pour inhalation par nébuliseur	suspension pour inhalation par nébuliseur	inhalée	Autorisation active	Procédure de reconnaissance mutuelle	Commercialisée	06/01/2006			 CHIESI	Non
+67261146	EZETIMIBE/ATORVASTATINE BIOGARAN 10 mg/10 mg,  comprimé pelliculé	comprimé pelliculé	orale	Autorisation active	Procédure nationale	Commercialisée	22/01/2024			 BIOGARAN	Non
+67346461	METFORMINE BIOGARAN 1000 mg, comprimé pelliculé	comprimé pelliculé	orale	Autorisation active	Procédure nationale	Commercialisée	27/08/2009			 BIOGARAN	Non
+68787715	PARACETAMOL BIOGARAN 1 g, comprimé	comprimé	orale	Autorisation active	Procédure nationale	Commercialisée	10/03/2004			 BIOGARAN	Non

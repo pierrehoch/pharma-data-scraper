@@ -1,0 +1,1610 @@
+{
+ "total": 16,
+ "results": {
+  "dkan_dataset/a217613c-12bc-5137-8b3a-ada0e4dad1ff": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC Comparison",
+   "identifier": "a217613c-12bc-5137-8b3a-ada0e4dad1ff",
+   "description": "The NADAC Weekly Comparison identifies the drug products with current NADAC rates that are replaced with new NADAC rates.  Other changes (e.g. NDC additions and terminations) to the NADAC file are not reflected in this comparison.\n\nNote: Effective Date was not recorded in the dataset until 6/7/2017",
+   "accessLevel": "public",
+   "issued": "2015-08-19T22:29:45+00:00",
+   "modified": "2026-09-29T11:38:06+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)",
+    "Comparison"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-comparison-09-30-2026.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/71030135-eef9-46b2-9d13-e401008e0fc6",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "a9102e69ff9db266178962cf3ae9cd04__1790681946__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-comparison-09-30-2026.csv",
+        "identifier": "a9102e69ff9db266178962cf3ae9cd04",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1790681946",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    },
+    {
+     "identifier": "092c6f5c-c26f-55d5-a71b-72af7e783437",
+     "data": "Comparison"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "4d09dcc2-1f0d-556e-89a9-8fd95ff6705d",
+     "data": {
+      "@type": "dcat:Distribution",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-comparison-09-30-2026.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/71030135-eef9-46b2-9d13-e401008e0fc6",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "a9102e69ff9db266178962cf3ae9cd04__1790681946__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-comparison-09-30-2026.csv",
+         "identifier": "a9102e69ff9db266178962cf3ae9cd04",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1790681946",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-09-29T07:39:05-0400"
+  },
+  "dkan_dataset/e3af839d-8175-5be0-b94e-4a302ed7a035": {
+   "@type": "dcat:Dataset",
+   "title": "First Time NADAC Rates",
+   "identifier": "e3af839d-8175-5be0-b94e-4a302ed7a035",
+   "description": "The tables below display new National Average Drug Acquisition Cost (NADAC) rates, sorted by Drug Product and Date. The drug products listed have not had a NADAC rate in the past.",
+   "accessLevel": "public",
+   "issued": "2020-11-06T19:58:56+00:00",
+   "modified": "2026-09-23T22:23:01+00:00",
+   "license": "https://www.usa.gov/publicdomain/label/1.0/",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Chris Vaughn",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/first-time-nadac-09232026.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/8f48dac1-fd84-489a-86be-1b16963d5651",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "f2b52b3a6e20d579159fb3029d38afde__1790200925__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/first-time-nadac-09232026.csv",
+        "identifier": "f2b52b3a6e20d579159fb3029d38afde",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1790200925",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "c35dfee4-bb41-5005-ad33-497b6f1e90d4",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/first-time-nadac-09232026.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/8f48dac1-fd84-489a-86be-1b16963d5651",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "f2b52b3a6e20d579159fb3029d38afde__1790200925__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/first-time-nadac-09232026.csv",
+         "identifier": "f2b52b3a6e20d579159fb3029d38afde",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1790200925",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-09-23T18:02:05-0400"
+  },
+  "dkan_dataset/1c5d0fc9-693a-534a-8240-4627d9362b0d": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2017",
+   "identifier": "1c5d0fc9-693a-534a-8240-4627d9362b0d",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-08-23T17:58:06+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2017-01-01T00:00:00+00:00/2018-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1c5d0fc9-693a-534a-8240-4627d9362b0d.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "1dc1afbe1451d28f89f726509797ffe4__1722522942__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1c5d0fc9-693a-534a-8240-4627d9362b0d.csv",
+        "identifier": "1dc1afbe1451d28f89f726509797ffe4",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522942",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "23332798-021a-599f-8bba-298a580e7941",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1c5d0fc9-693a-534a-8240-4627d9362b0d.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "1dc1afbe1451d28f89f726509797ffe4__1722522942__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1c5d0fc9-693a-534a-8240-4627d9362b0d.csv",
+         "identifier": "1dc1afbe1451d28f89f726509797ffe4",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522942",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:22:56-0400"
+  },
+  "dkan_dataset/1fe73992-cbfd-5109-97bc-dee8b33fdcff": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2013",
+   "identifier": "1fe73992-cbfd-5109-97bc-dee8b33fdcff",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-08-23T18:00:05+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2013-01-01T00:00:00+00:00/2014-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1fe73992-cbfd-5109-97bc-dee8b33fdcff.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/f6868b6f-7ac0-4438-ba0b-2f8e5555123f",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "1254d03980e41886244538d4efb33c0b__1723651976__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1fe73992-cbfd-5109-97bc-dee8b33fdcff.csv",
+        "identifier": "1254d03980e41886244538d4efb33c0b",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1723651976",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "ec171a2d-af9d-547a-bf36-3d826c08a3e5",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1fe73992-cbfd-5109-97bc-dee8b33fdcff.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/f6868b6f-7ac0-4438-ba0b-2f8e5555123f",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "1254d03980e41886244538d4efb33c0b__1723651976__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.1fe73992-cbfd-5109-97bc-dee8b33fdcff.csv",
+         "identifier": "1254d03980e41886244538d4efb33c0b",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1723651976",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:19:56-0400"
+  },
+  "dkan_dataset/4a00010a-132b-4e4d-a611-543c9521280f": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2023",
+   "identifier": "4a00010a-132b-4e4d-a611-543c9521280f",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "modified": "2023-12-26T16:17:01+00:00",
+   "license": "http://www.usa.gov/publicdomain/label/1.0/",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "NADAC (National Average Drug Acquisition Cost) 2023",
+     "format": "csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-27-2023.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "61c9dcc2a7c358c928d045d967bde470__1722523010__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-27-2023.csv",
+        "identifier": "61c9dcc2a7c358c928d045d967bde470",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722523010",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "deff30b4-7846-57ac-8346-1ba87666d59f",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "NADAC (National Average Drug Acquisition Cost) 2023",
+      "format": "csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-27-2023.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "61c9dcc2a7c358c928d045d967bde470__1722523010__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-27-2023.csv",
+         "identifier": "61c9dcc2a7c358c928d045d967bde470",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722523010",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:18:45-0400"
+  },
+  "dkan_dataset/4d7af295-2132-55a8-b40c-d6630061f3e8": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2015",
+   "identifier": "4d7af295-2132-55a8-b40c-d6630061f3e8",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-08-23T17:58:12+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2015-01-01T00:00:00+00:00/2016-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.4d7af295-2132-55a8-b40c-d6630061f3e8.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "ecd48b4bc08f7f91744add106cf9645e__1722522915__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.4d7af295-2132-55a8-b40c-d6630061f3e8.csv",
+        "identifier": "ecd48b4bc08f7f91744add106cf9645e",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522915",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "97118166-eb0e-5845-92b6-93cf17375013",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.4d7af295-2132-55a8-b40c-d6630061f3e8.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "ecd48b4bc08f7f91744add106cf9645e__1722522915__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.4d7af295-2132-55a8-b40c-d6630061f3e8.csv",
+         "identifier": "ecd48b4bc08f7f91744add106cf9645e",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522915",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:23:23-0400"
+  },
+  "dkan_dataset/7656fc17-f1b4-566b-9a2d-c4a4f2ac7ae1": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2016",
+   "identifier": "7656fc17-f1b4-566b-9a2d-c4a4f2ac7ae1",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-08-23T17:58:05+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2016-01-01T00:00:00+00:00/2017-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.7656fc17-f1b4-566b-9a2d-c4a4f2ac7ae1.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "52a641d8a9e4f38b409be0d270a5e2da__1722522930__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.7656fc17-f1b4-566b-9a2d-c4a4f2ac7ae1.csv",
+        "identifier": "52a641d8a9e4f38b409be0d270a5e2da",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522930",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "af054962-06c4-5d7c-858d-37a4c602e025",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.7656fc17-f1b4-566b-9a2d-c4a4f2ac7ae1.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "52a641d8a9e4f38b409be0d270a5e2da__1722522930__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.7656fc17-f1b4-566b-9a2d-c4a4f2ac7ae1.csv",
+         "identifier": "52a641d8a9e4f38b409be0d270a5e2da",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522930",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:22:32-0400"
+  },
+  "dkan_dataset/76a1984a-6d69-5e4d-86c8-65eb31f0506d": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2019",
+   "identifier": "76a1984a-6d69-5e4d-86c8-65eb31f0506d",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-08-23T18:00:11+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2019-01-01T00:00:00+00:00/2020-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.76a1984a-6d69-5e4d-86c8-65eb31f0506d.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/f6868b6f-7ac0-4438-ba0b-2f8e5555123f",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "678d559345473c48e64ff15d1fb405b9__1722522966__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.76a1984a-6d69-5e4d-86c8-65eb31f0506d.csv",
+        "identifier": "678d559345473c48e64ff15d1fb405b9",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522966",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "a2e7523b-d995-56f6-b161-2730e1f7f471",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.76a1984a-6d69-5e4d-86c8-65eb31f0506d.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/f6868b6f-7ac0-4438-ba0b-2f8e5555123f",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "678d559345473c48e64ff15d1fb405b9__1722522966__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.76a1984a-6d69-5e4d-86c8-65eb31f0506d.csv",
+         "identifier": "678d559345473c48e64ff15d1fb405b9",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522966",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:21:16-0400"
+  },
+  "dkan_dataset/8de1b213-73c5-552b-b84e-ac795f34d056": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2018",
+   "identifier": "8de1b213-73c5-552b-b84e-ac795f34d056",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-08-23T17:58:04+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2018-01-01T00:00:00+00:00/2019-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.8de1b213-73c5-552b-b84e-ac795f34d056.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "8fc9282bd9dc9e961c8ca72893be3c7d__1722522953__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.8de1b213-73c5-552b-b84e-ac795f34d056.csv",
+        "identifier": "8fc9282bd9dc9e961c8ca72893be3c7d",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522953",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "5e5e4e48-c4f0-5cd2-b315-1e92c0447bd0",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.8de1b213-73c5-552b-b84e-ac795f34d056.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "8fc9282bd9dc9e961c8ca72893be3c7d__1722522953__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.8de1b213-73c5-552b-b84e-ac795f34d056.csv",
+         "identifier": "8fc9282bd9dc9e961c8ca72893be3c7d",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522953",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:22:09-0400"
+  },
+  "dkan_dataset/99315a95-37ac-4eee-946a-3c523b4c481e": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2024",
+   "identifier": "99315a95-37ac-4eee-946a-3c523b4c481e",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "modified": "2024-12-23T21:05:00+00:00",
+   "license": "https://www.usa.gov/publicdomain/label/1.0/",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "format": "csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-25-2024.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "2343a642f708a23461fbd27aebb0ad95__1735591385__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-25-2024.csv",
+        "identifier": "2343a642f708a23461fbd27aebb0ad95",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1735591385",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:00"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "b3b205f4-e788-5ec6-a342-d889111a6c2e",
+     "data": {
+      "@type": "dcat:Distribution",
+      "format": "csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-25-2024.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "2343a642f708a23461fbd27aebb0ad95__1735591385__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-25-2024.csv",
+         "identifier": "2343a642f708a23461fbd27aebb0ad95",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1735591385",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:18:14-0400"
+  },
+  "dkan_dataset/ba0c3734-8012-549a-8f50-2ff389d0e0ef": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2014",
+   "identifier": "ba0c3734-8012-549a-8f50-2ff389d0e0ef",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-08-23T17:58:02+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2014-01-01T00:00:00+00:00/2015-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.ba0c3734-8012-549a-8f50-2ff389d0e0ef.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "4e89702257fc989249a7d87df7564729__1722522907__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.ba0c3734-8012-549a-8f50-2ff389d0e0ef.csv",
+        "identifier": "4e89702257fc989249a7d87df7564729",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522907",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "1c662d74-b282-52b9-942f-75f8933f086f",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.ba0c3734-8012-549a-8f50-2ff389d0e0ef.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "4e89702257fc989249a7d87df7564729__1722522907__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.ba0c3734-8012-549a-8f50-2ff389d0e0ef.csv",
+         "identifier": "4e89702257fc989249a7d87df7564729",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522907",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:23:45-0400"
+  },
+  "dkan_dataset/c933dc16-7de9-52b6-8971-4b75992673e0": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2020",
+   "identifier": "c933dc16-7de9-52b6-8971-4b75992673e0",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:55:00+00:00",
+   "modified": "2021-08-23T17:59:01+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2020-01-01T00:00:00+00:00/2021-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "CSV",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.c933dc16-7de9-52b6-8971-4b75992673e0.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "9cdfaacd5515f31ff2631654f75e96fa__1722522983__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.c933dc16-7de9-52b6-8971-4b75992673e0.csv",
+        "identifier": "9cdfaacd5515f31ff2631654f75e96fa",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522983",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "72264015-7ce9-57d4-9cd7-eebf100ea5cb",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "CSV",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.c933dc16-7de9-52b6-8971-4b75992673e0.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "9cdfaacd5515f31ff2631654f75e96fa__1722522983__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost.a4y5-998d.c933dc16-7de9-52b6-8971-4b75992673e0.csv",
+         "identifier": "9cdfaacd5515f31ff2631654f75e96fa",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522983",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:21:45-0400"
+  },
+  "dkan_dataset/d5eaf378-dcef-5779-83de-acdd8347d68e": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2021",
+   "identifier": "d5eaf378-dcef-5779-83de-acdd8347d68e",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "issued": "2014-11-07T15:54:00+00:00",
+   "modified": "2021-12-28T09:56:01+00:00",
+   "license": "https://www.usa.gov/government-works",
+   "temporal": "2021-01-01T00:00:00+00:00/2022-01-01T00:00:00+00:00",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "NADAC (National Average Drug Acquisition Cost) 2021",
+     "format": "csv",
+     "mediaType": "text/csv",
+     "downloadURL": "https://download.medicaid.gov/data/national-average-drug-acquisition-cost-12-29-2021.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/f6868b6f-7ac0-4438-ba0b-2f8e5555123f",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "a0586d3645a341511e5af9165a790763__1722523059__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/national-average-drug-acquisition-cost-12-29-2021.csv",
+        "identifier": "a0586d3645a341511e5af9165a790763",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722523059",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "1266b3ce-6bd6-5bbe-a6d5-61796e8b0348",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "NADAC (National Average Drug Acquisition Cost) 2021",
+      "format": "csv",
+      "mediaType": "text/csv",
+      "downloadURL": "https://download.medicaid.gov/data/national-average-drug-acquisition-cost-12-29-2021.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/f6868b6f-7ac0-4438-ba0b-2f8e5555123f",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "a0586d3645a341511e5af9165a790763__1722523059__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/national-average-drug-acquisition-cost-12-29-2021.csv",
+         "identifier": "a0586d3645a341511e5af9165a790763",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722523059",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:20:20-0400"
+  },
+  "dkan_dataset/dfa2ab14-06c2-457a-9e36-5cb6d80f8d93": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2022",
+   "identifier": "dfa2ab14-06c2-457a-9e36-5cb6d80f8d93",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "modified": "2023-01-18T16:47:01+00:00",
+   "license": "http://www.usa.gov/publicdomain/label/1.0/",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "title": "NADAC (National Average Drug Acquisition Cost) 2022",
+     "format": "csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-2022.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "c981fdc3381093be43f677729a0bd078__1722522995__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-2022.csv",
+        "identifier": "c981fdc3381093be43f677729a0bd078",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1722522995",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "2c56ba1c-a423-5c89-94b9-c854fd45602e",
+     "data": {
+      "@type": "dcat:Distribution",
+      "title": "NADAC (National Average Drug Acquisition Cost) 2022",
+      "format": "csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-2022.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "c981fdc3381093be43f677729a0bd078__1722522995__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-2022.csv",
+         "identifier": "c981fdc3381093be43f677729a0bd078",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1722522995",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:19:28-0400"
+  },
+  "dkan_dataset/f38d0706-1239-442c-a3cc-40ef1b686ac0": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2025",
+   "identifier": "f38d0706-1239-442c-a3cc-40ef1b686ac0",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "modified": "2025-12-30T15:25:00+00:00",
+   "license": "https://www.usa.gov/publicdomain/label/1.0/",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "format": "csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-31-2025.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "ec51af6dcbab3fe4fc03c7985fb1f2a5__1767108435__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-31-2025.csv",
+        "identifier": "ec51af6dcbab3fe4fc03c7985fb1f2a5",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1767108435",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:00"
+   ],
+   "programCode": [
+    "009:000"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "ae004d7f-5799-5de3-91ec-f1247f1a5452",
+     "data": {
+      "@type": "dcat:Distribution",
+      "format": "csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-31-2025.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "ec51af6dcbab3fe4fc03c7985fb1f2a5__1767108435__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-12-31-2025.csv",
+         "identifier": "ec51af6dcbab3fe4fc03c7985fb1f2a5",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1767108435",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-08-19T18:24:20-0400"
+  },
+  "dkan_dataset/fbb83258-11c7-47f5-8b18-5f8e79f7e704": {
+   "@type": "dcat:Dataset",
+   "title": "NADAC (National Average Drug Acquisition Cost) 2026",
+   "identifier": "fbb83258-11c7-47f5-8b18-5f8e79f7e704",
+   "description": "National Average Drug Acquisition Cost (NADAC) weekly reference data for the calendar year.",
+   "accessLevel": "public",
+   "modified": "2026-09-29T11:37:01+00:00",
+   "license": "https://www.usa.gov/publicdomain/label/1.0/",
+   "publisher": {
+    "@type": "org:Organization",
+    "name": "data.medicaid.gov"
+   },
+   "contactPoint": {
+    "fn": "Medicaid.gov",
+    "hasEmail": "mailto:Medicaid.gov@cms.hhs.gov"
+   },
+   "theme": [
+    "Drug Pricing and Payment"
+   ],
+   "keyword": [
+    "National Average Drug Acquisition Cost (NADAC)"
+   ],
+   "distribution": [
+    {
+     "@type": "dcat:Distribution",
+     "format": "csv",
+     "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-09-30-2026.csv",
+     "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+     "describedByType": "application/vnd.tableschema+json",
+     "%Ref:downloadURL": [
+      {
+       "identifier": "82fa0fe4c6e46ef016dd915589fea15e__1790681897__source",
+       "data": {
+        "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-09-30-2026.csv",
+        "identifier": "82fa0fe4c6e46ef016dd915589fea15e",
+        "mimeType": "text/csv",
+        "perspective": "source",
+        "version": "1790681897",
+        "checksum": null
+       }
+      }
+     ]
+    }
+   ],
+   "bureauCode": [
+    "009:38"
+   ],
+   "programCode": [
+    "009:076"
+   ],
+   "%Ref:publisher": {
+    "identifier": "4f3cccad-4fcd-5411-9d07-c23ed9e20068",
+    "data": {
+     "@type": "org:Organization",
+     "name": "data.medicaid.gov"
+    }
+   },
+   "%Ref:theme": [
+    {
+     "identifier": "b220e90d-27bb-5f04-809f-5e239ec50ed4",
+     "data": "Drug Pricing and Payment"
+    }
+   ],
+   "%Ref:keyword": [
+    {
+     "identifier": "02368155-5201-507c-bf25-4543a1f107d0",
+     "data": "National Average Drug Acquisition Cost (NADAC)"
+    }
+   ],
+   "%Ref:distribution": [
+    {
+     "identifier": "7c87b03c-630e-58e9-8fcc-1d1fa6753879",
+     "data": {
+      "@type": "dcat:Distribution",
+      "format": "csv",
+      "downloadURL": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-09-30-2026.csv",
+      "describedBy": "https://data.medicaid.gov/api/1/metastore/schemas/data-dictionary/items/de58d5ec-4515-494e-ae3f-620200f72989",
+      "describedByType": "application/vnd.tableschema+json",
+      "%Ref:downloadURL": [
+       {
+        "identifier": "82fa0fe4c6e46ef016dd915589fea15e__1790681897__source",
+        "data": {
+         "filePath": "https://download.medicaid.gov/data/nadac-national-average-drug-acquisition-cost-09-30-2026.csv",
+         "identifier": "82fa0fe4c6e46ef016dd915589fea15e",
+         "mimeType": "text/csv",
+         "perspective": "source",
+         "version": "1790681897",
+         "checksum": null
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "%modified": "2026-09-29T07:38:16-0400"
+  }
+ }
+}

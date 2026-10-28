@@ -1,0 +1,2 @@
+product_id,generic_name,brand_name,strength,dosage_form,pack_quantity,pack_unit,manufacturer,procurement_batch,price,currency,price_unit,effective_from,source_document_url
+TEST-0001,atorvastatin,,10 mg,tablet,28,tablet,Test Pharma,batch test,1.23,CNY,pack,2026-01-01,https://example.org/doc

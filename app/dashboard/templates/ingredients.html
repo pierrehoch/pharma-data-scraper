@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Ingredient mappings{% endblock %}
+{% block content %}
+<h1>Ingredient mappings</h1>
+<p>Review source wording and map it to verified canonical ingredients. Each correction applies only to the exact wording in one source, including future imports. No fuzzy matches are saved automatically.</p>
+<form class="filters" method="get">
+  <label>Source<select name="source_id"><option value="">all</option>{% for s in sources %}<option {% if source_id == s %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></label>
+  <label>Status<select name="status">{% for s in statuses %}<option value="{{ s }}" {% if status == s %}selected{% endif %}>{{ s | replace('_', ' ') }}</option>{% endfor %}</select></label>
+  <label>Source ingredient wording<input name="search" value="{{ search }}" placeholder="filter source labels"></label>
+  <button>Filter</button>
+  <a href="/dashboard/ingredients">Reset</a>
+</form>
+<p class="small">Grouped by source and exact wording; largest groups first. Counts reflect products matching the selected status, not price lines. Missing ingredient wording requires additional source evidence, not a guessed mapping.</p>
+<table>
+<tr><th>Source</th><th>Source ingredient wording</th><th class="num">Products</th><th>Status counts</th><th></th></tr>
+{% for row in rows %}
+<tr>
+  <td>{{ row.source_id }}</td><td>{{ row.ingredient or "(no ingredient wording)" }}</td>
+  <td class="num">{{ row.products }}</td>
+  <td>{{ row.unresolved }} unresolved / missing; {{ row.partial }} partial; {{ row.ambiguous }} ambiguous; {{ row.resolved }} resolved</td>
+  <td><a href="/dashboard/ingredients/{{ row.product_id }}">Review</a></td>
+</tr>
+{% else %}<tr><td colspan="5">No ingredient groups match these filters.</td></tr>{% endfor %}
+</table>
+<p class="pager">{{ total }} groups &middot; page {{ page }}/{{ pages or 1 }}
+{% if page > 1 %}<a href="?page={{ page - 1 }}&{{ query }}">Previous</a>{% endif %}
+{% if page < pages %}<a href="?page={{ page + 1 }}&{{ query }}">Next</a>{% endif %}</p>
+{% endblock %}

@@ -1,0 +1,43 @@
+# Local development stack.
+#   docker compose up -d postgres backend
+#   docker compose run --rm backend python -m app ingest --all --limit 100
+# The dashboard (server-rendered) is served by the backend at http://localhost:8000/dashboard,
+# so no separate frontend container is needed.
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: pharma
+      POSTGRES_PASSWORD: pharma
+      POSTGRES_DB: pharma
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pharma"]
+      interval: 5s
+      retries: 10
+
+  backend:
+    build: .
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg://pharma:pharma@postgres:5432/pharma
+      RAW_STORAGE_DIR: /srv/storage/raw
+      MANUAL_IMPORT_DIR: /srv/data/manual
+    ports:
+      - "8000:8000"
+    volumes:
+      - rawdata:/srv/storage
+      - ./data/manual:/srv/data/manual
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  rawdata:

@@ -1,0 +1,18 @@
+Código Nacional,Nombre del producto farmacéutico,Tipo de fármaco,Nombre genérico efecto y accesorio,Código del laboratorio ofertante,Nombre del laboratorio ofertante,Estado,Fecha de alta en el nomenclátor,Fecha de baja en el nomenclátor,Aportación del beneficiario,Principio activo o asociación de principios activos,Precio venta al público con IVA,Precio de referencia,Menor precio de la agrupación homogénea del producto sanitario,Código de la agrupación homogénea del producto sanitario,Nombre de la agrupación homogénea del producto sanitario,Diagnóstico hospitalario,Tratamiento de larga duración,Especial control médico,Medicamento huérfano
+140001,aceite salicilado 50 mg/ml solucion cutanea 100 ml 1 frasco,,,,,,,,NORMAL,SALICILICO ACIDO,,,,,,,,,NO
+140002,captopril 4 mg/ml suspension oral 100 ml 1 frasco,,,,,,,,ESPECIAL,CAPTOPRIL,,,,,,,,,NO
+140003,cobre sulfato 10 mg/ml solucion cutanea 250 ml 1 frasco,,,,,,,,NORMAL,COBRE SULFATO,,,,,,,,,NO
+140004,cromoglicato sodio 200 mg 100 capsulas,,,,,,,,ESPECIAL,CROMOGLICATO DE SODIO,,,,,,,,,NO
+140005,omeprazol 2 mg/ml jarabe 100 ml 1 frasco,,,,,,,,NORMAL,OMEPRAZOL,,,,,,,,,NO
+650004,"DEPAKINE 500 mg comprimidos gastrorresistentes, 20 comprimidos",Medicamento Etica,,345,"SANOFI AVENTIS, S.A",ALTA,29/10/2004,,ESPECIAL,VALPROATO SODIO,2.5,2.5,,,,NO,SI,NO,NO
+650005,"DEPAKINE 500 mg comprimidos gastrorresistentes, 100 comprimidos",Medicamento Etica,,345,"SANOFI AVENTIS, S.A",ALTA,29/10/2004,,ESPECIAL,VALPROATO SODIO,12.05,12.05,,,,NO,SI,NO,NO
+650006,"DEPAKINE 200 mg comprimidos gastrorresistentes, 40 comprimidos",Medicamento Etica,,345,"SANOFI AVENTIS, S.A",ALTA,29/10/2004,,ESPECIAL,VALPROATO SODIO,2.5,2.5,,,,NO,SI,NO,NO
+651444,"PAZITAL 37,5 mg/325 mg COMPRIMIDOS RECUBIERTOS CON PELICULA , 60 comprimidos",Medicamento Etica,,18,"GRÜNENTHAL PHARMA, S.A",ALTA,01/08/2017,,NORMAL,"TRAMADOL HIDROCLORURO,PARACETAMOL",8.88,8.88,8.88,3962,"TRAMADOL/PARACETAMOL 37,5MG/325MG 60 COMPRIMIDOS",NO,NO,NO,NO
+652884,"FLUDETEN 500 mg/30 mg COMPRIMIDOS EFERVESCENTES , 20 comprimidos",Medicamento Etica,,15,ALTER S.A.,ALTA,01/11/2011,,NORMAL,"CODEINA FOSFATO,PARACETAMOL",2.5,2.5,2.5,2399,PARACETAMOL/CODEINA 500MG/30MG 20 COMPRIMIDOS EFERVESCENTES,NO,NO,NO,NO
+655905,"PARACETAMOL KERN PHARMA 650 mg comprimidos, 40 comprimidos",Medicamento Generico,,863,"KERN PHARMA, S.L.",ALTA,12/12/2006,,NORMAL,PARACETAMOL,1.31,1.31,1.31,3336,PARACETAMOL 650 MG 40 COMPRIMIDOS,NO,NO,NO,NO
+651068,"ATORVASTATINA CINFA 10 mg comprimidos recubiertos con pelicula , 28 comprimidos",Medicamento Generico,,111,CINFA S.A.,ALTA,01/09/2011,,NORMAL,ATORVASTATINA CALCICA TRIHIDRATO,3.61,3.61,3.61,304,ATORVASTATINA 10 MG 28 COMPRIMIDOS,NO,NO,NO,NO
+651076,"ATORVASTATINA CINFA 20 mg comprimidos recubiertos con pelicula , 28 comprimidos",Medicamento Generico,,111,CINFA S.A.,ALTA,01/09/2011,,NORMAL,ATORVASTATINA CALCICA TRIHIDRATO,7.2,7.2,7.2,305,ATORVASTATINA 20 MG 28 COMPRIMIDOS,NO,NO,NO,NO
+651084,"ATORVASTATINA CINFA 40 mg comprimidos recubiertos con pelicula , 28 comprimidos",Medicamento Generico,,111,CINFA S.A.,ALTA,01/09/2011,,NORMAL,ATORVASTATINA CALCICA TRIHIDRATO,14.39,14.39,14.39,306,ATORVASTATINA 40 MG 28 COMPRIMIDOS,NO,NO,NO,NO
+400011,MODERMA FLEX ABIERTA PLANA MINI OPACA 15-55MM 30U,,BOLSAS ILEOST RES SINT MIC FIL,999,"HOLLISTER IBERICA, S.A.",ALTA,07/12/2006,,ESPECIAL,,68.5,,,,,,,,NO
+400012,MODERMA FLEX ABIERTA CONVEXA MAXI OPACA 15-38MM 30U,,BOLSAS ILEOST RES SINT MIC FIL,999,"HOLLISTER IBERICA, S.A.",ALTA,07/12/2006,,ESPECIAL,,68.5,,,,,,,,NO
+400013,MODERMA FLEX ABIERTA CONVEXA MAXI OPACA 15-51MM 30U,,BOLSAS ILEOST RES SINT MIC FIL,999,"HOLLISTER IBERICA, S.A.",ALTA,07/12/2006,,ESPECIAL,,68.5,,,,,,,,NO

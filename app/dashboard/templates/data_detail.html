@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ product.name or product.product_code }} <span class="small">{{ product.source_id }} · {{ product.country }} · {{ product.code_type }} {{ product.product_code }}</span></h1>
+<p><a href="/dashboard/data?source_id={{ product.source_id }}">← {{ product.source_id }} data</a></p>
+
+<h2>Product</h2>
+<table>
+{% for name, value in fields if value is not none and value != "" %}
+<tr><th>{{ name }}</th><td>{% if name == "detail_url" %}<a href="{{ value }}" rel="noopener noreferrer" target="_blank">{{ value }}</a>{% elif value is sameas true %}yes{% elif value is sameas false %}no{% else %}{{ fmt(value) }}{% endif %}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Ingredient mapping</h2>
+<p><a href="/dashboard/ingredients/{{ product.id }}">Review or correct this source ingredient mapping</a></p>
+{% if ingredient_resolution %}
+<p>Resolution: <strong>{{ ingredient_resolution.status }}</strong>{% if ingredient_resolution.reason %} · {{ ingredient_resolution.reason }}{% endif %}</p>
+{% else %}<p class="t-muted">No ingredient-resolution record is available for this product.</p>{% endif %}
+{% if ingredient_mappings %}
+<table><tr><th>Canonical ingredient</th><th>Source text</th><th>Method</th><th>Evidence</th></tr>
+{% for mapping in ingredient_mappings %}
+<tr><td>{{ mapping.name }} <span class="small">({{ mapping.ingredient_id }})</span></td><td>{{ mapping.source_text or "" }}</td><td>{{ mapping.method }}</td><td>{{ mapping.evidence }}</td></tr>
+{% endfor %}</table>
+{% else %}<p class="t-muted">No verified ingredient mappings are linked.</p>{% endif %}
+
+<h2>Prices <span class="small">({{ prices | length }} observations, current and past)</span></h2>
+<div style="overflow-x:auto">
+<table>
+<tr>{% for c in price_columns %}<th>{{ c }}</th>{% endfor %}</tr>
+{% for p in prices %}
+<tr{% if not p.is_current %} class="t-muted"{% endif %}>
+{% for c in price_columns %}{% set v = p[c] %}<td{% if c in ("amount", "unit_price", "dispensing_fee", "tax_rate") %} class="num"{% endif %}>{% if c == "quality_flags" %}{% for flag in v or [] %}<span class="badge warn" title="{{ flag_labels.get(flag, flag) }}">{{ flag }}</span><div class="small">{{ flag_labels.get(flag, flag) }}</div>{% endfor %}{% elif v is sameas true %}yes{% elif v is sameas false %}no{% elif v is none %}{% else %}{{ fmt(v) }}{% endif %}</td>{% endfor %}
+</tr>
+{% else %}<tr><td colspan="{{ price_columns | length }}" class="t-muted">This source publishes no price for this item</td></tr>{% endfor %}
+</table>
+</div>
+{% endblock %}

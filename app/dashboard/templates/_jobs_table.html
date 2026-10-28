@@ -1,0 +1,18 @@
+<table>
+<tr><th>Job</th><th>Source</th><th>Started</th><th class="num">Duration (s)</th><th>Mode</th><th>Status</th>
+<th class="num">Raw</th><th class="num">Parsed</th><th class="num">Normalized</th><th class="num">Products</th>
+<th class="num">Prices new</th><th class="num">Warnings</th><th class="num">Errors</th></tr>
+{% for j in jobs %}
+<tr>
+  <td><a href="/dashboard/jobs/{{ j.id }}">{{ j.id[:8] }}</a></td>
+  <td><a href="/dashboard/sources/{{ j.source_id }}">{{ j.source_id }}</a></td>
+  <td>{{ fmt(j.started_at)[:19] }}</td>
+  <td class="num">{{ "%.1f"|format(j.duration_seconds) if j.duration_seconds is not none else "" }}</td>
+  <td>{{ j.mode }}{% if j.limit %} · {{ j.limit }}{% endif %}</td>
+  <td><span class="badge {{ status_class.get(j.status, 'muted') }}">{{ j.status }}</span></td>
+  <td class="num">{{ j.records_downloaded }}</td><td class="num">{{ j.records_parsed }}</td><td class="num">{{ j.records_normalized }}</td>
+  <td class="num">{{ j.records_published }}</td><td class="num">{{ j.prices_published }}</td>
+  <td class="num">{{ j.validation_warnings }}</td><td class="num {% if j.error_count %}t-err{% endif %}">{{ j.error_count }}</td>
+</tr>
+{% else %}<tr><td colspan="13" class="t-muted">No job yet</td></tr>{% endfor %}
+</table>

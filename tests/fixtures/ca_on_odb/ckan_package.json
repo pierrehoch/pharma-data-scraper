@@ -1,0 +1,15 @@
+{
+ "success": true,
+ "result": {
+  "name": "ontario-drug-benefit-formulary-comparative-drug-index-formularycdi",
+  "current_as_of": "2019-09-19",
+  "resources": [
+   {
+    "name": "Data extract",
+    "format": "XML",
+    "url": "https://www.health.gov.on.ca/en/pro/programs/drugs/data_extract.xml",
+    "data_last_updated": "2026-09-29"
+   }
+  ]
+ }
+}

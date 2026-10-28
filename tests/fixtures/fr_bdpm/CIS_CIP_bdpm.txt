@@ -1,0 +1,14 @@
+60002283	4949729	plaquette(s) PVC PVDC aluminium de 30 comprimé(s)	Présentation active	Déclaration de commercialisation	16/03/2011	3400949497294	oui	100%	24,34	25,36	1,02	
+60002283	4949770	plaquette(s) PVC PVDC aluminium de 90 comprimé(s)	Présentation active	Déclaration de commercialisation	19/09/2011	3400949497706	oui	100%	68,68	71,44	2,76	
+60003620	3696350	20 récipient(s) unidose(s) polyéthylène de 2 ml suremballée(s)/surpochée(s) par plaquette de 5 récipients unidoses	Présentation active	Déclaration de commercialisation	30/11/2006	3400936963504	oui	65%	12,81	13,83	1,02	Ce médicament peut être pris en charge ou remboursé par l'Assurance Maladie dans les cas suivants :<br><br>- Asthme persistant sévère de l¿enfant (en traitement quotidien).  ; JOURNAL OFFICIEL ; 24/11/06
+67261146	3028733	plaquette(s) OPA : polyamide orienté aluminium PVC de 30 comprimé(s)	Présentation active	Déclaration de commercialisation	13/09/2024	3400930287330	oui	65 %	10,43	11,45	1,02	
+67261146	3028734	plaquette(s) OPA : polyamide orienté aluminium PVC de 90 comprimé(s)	Présentation active	Déclaration de commercialisation	13/09/2024	3400930287347	oui	65 %	30,75	33,51	2,76	
+67346461	3011880	flacon(s) polyéthylène haute densité (PEHD) de 30 comprimé(s)	Présentation active	Déclaration de commercialisation	28/09/2018	3400930118801	oui	65%	1,95	2,97	1,02	
+67346461	3971833	plaquette(s) PVC-Aluminium de 30 comprimé(s)	Présentation active	Déclaration de commercialisation	12/12/2013	3400939718330	oui	65%	1,95	2,97	1,02	
+67346461	3971862	plaquette(s) PVC-Aluminium de 90 comprimé(s)	Présentation active	Déclaration de commercialisation	17/04/2014	3400939718620	oui	65%	5,15	6,17	1,02	
+68787715	3003622	flacon(s) polyéthylène haute densité (PEHD) de 8 comprimé(s)	Présentation active	Déclaration de commercialisation	01/07/2016	3400930036228	oui	65%	1,16	2,18	1,02	
+68787715	3638186	plaquette(s) thermoformée(s) PVC-Aluminium de 8 comprimé(s)	Présentation active	Déclaration de commercialisation	07/09/2004	3400936381865	oui	65%	1,16	2,18	1,02	
+69118175	3385704	plaquette(s) aluminium PVC de 12 gélule(s)	Présentation active	Déclaration de commercialisation	06/04/2006	3400933857042	oui	65%	1,53	2,55	1,02	
+69522513	3018309	plaquette(s) PVC polyéthylène PVDC aluminium de 30 comprimé(s)	Présentation active	Déclaration de commercialisation	26/03/2020	3400930183090	oui	65%	3,18	4,20	1,02	
+69522513	3018311	plaquette(s) PVC polyéthylène PVDC aluminium de 90 comprimé(s)	Présentation active	Déclaration de commercialisation	03/06/2020	3400930183113	oui	65%	9,04	11,80	2,76	
+69522513	3022461	flacon(s) polyéthylène haute densité (PEHD) de 30 comprimé(s)	Présentation active	Déclaration de commercialisation	02/11/2021	3400930224618	oui	65 %	3,18	4,20	1,02	

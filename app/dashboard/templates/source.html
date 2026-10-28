@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% set s = row.source %}
+<h1>{{ s.name }} <span class="small">{{ s.id }} · {{ s.country }} · {{ s.coverage_scope }}</span> <a class="small" href="/dashboard/data?source_id={{ s.id }}">view data →</a></h1>
+<table>
+  <tr><th>Adapter</th><td>{{ s.adapter }} ({{ s.parser_type }}) – <b>{{ s.adapter_status }}</b></td></tr>
+  <tr><th>Source URL</th><td><a href="{{ s.source_url }}" rel="noopener noreferrer" target="_blank">{{ s.source_url }}</a></td></tr>
+  <tr><th>Identifier</th><td>{{ s.identifier_type }}</td></tr>
+  <tr><th>Expected frequency</th><td>{{ s.expected_frequency }}{% if row.next_expected_update %} – next expected {{ fmt(row.next_expected_update)[:10] }}{% endif %}</td></tr>
+  <tr><th>Documentary status</th><td>{{ s.documentary_status or "—" }}</td></tr>
+  <tr><th>Known limitations</th><td>{{ s.notes or "—" }}</td></tr>
+  <tr><th>Schema</th><td>{{ row.schema_status }}</td></tr>
+</table>
+
+<h2>Schema baselines</h2>
+<table>
+<tr><th>File role</th><th class="num">Columns</th><th class="num">Rows</th><th>Accepted</th><th>Snapshot</th></tr>
+{% for b in baselines %}
+<tr><td>{{ b.role }}</td><td class="num" title="{{ b.columns | join(', ') }}">{{ b.columns | length }}</td><td class="num">{{ b.row_count or "—" }}</td><td>{{ fmt(b.accepted_at)[:16] }}</td><td class="small">{{ b.snapshot_id }}</td></tr>
+{% else %}<tr><td colspan="5" class="t-muted">No baseline yet (first successful non-dry-run creates it)</td></tr>{% endfor %}
+</table>
+
+<h2>Recent jobs</h2>
+{% include "_jobs_table.html" %}
+{% endblock %}

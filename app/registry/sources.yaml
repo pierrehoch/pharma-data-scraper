@@ -1,0 +1,251 @@
+# Central Source Registry: every source = one adapter + this entry.
+
+sources:
+  us_nadac:
+    country: US
+    name: "Medicaid NADAC (National Average Drug Acquisition Cost)"
+    adapter: us_nadac
+    enabled: true
+    expected_frequency: weekly
+    source_url: "https://data.medicaid.gov/datasets?fulltext=NADAC"
+    identifier_type: NDC11
+    currency: USD
+    options:
+      latest_as_of_only: true
+      sample_via_api_when_limited: true
+
+  us_asp:
+    country: US
+    name: "CMS Medicare Part B ASP Drug Payment Limit Files"
+    adapter: us_asp
+    enabled: true
+    expected_frequency: quarterly
+    source_url: "https://www.cms.gov/medicare/payment/part-b-drugs/asp-pricing-files"
+    identifier_type: HCPCS
+    currency: USD
+
+  fr_bdpm:
+    country: FR
+    name: "Base de Données Publique des Médicaments (BDPM)"
+    adapter: fr_bdpm
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://base-donnees-publique.medicaments.gouv.fr/telechargement"
+    identifier_type: CIP13
+    currency: EUR
+
+  de_festbetrag:
+    country: DE
+    name: "BfArM / GKV-Spitzenverband – Arzneimittel-Festbeträge (PDF)"
+    adapter: de_festbetrag
+    enabled: true
+    expected_frequency: biweekly
+    source_url: "https://www.bfarm.de/DE/Arzneimittel/Arzneimittelinformationen/Festbetraege-und-Zuzahlungen/Festbetraege/_node.html"
+    identifier_type: PZN
+    currency: EUR
+    documentary_status: "consultation document (PDF), not a machine-readable official dataset"
+
+  de_amnog:
+    country: DE
+    name: "GKV-Spitzenverband – AMNOG Erstattungsbetrag negotiations overview"
+    adapter: de_amnog
+    enabled: true
+    expected_frequency: weekly
+    source_url: "https://www.gkv-spitzenverband.de/krankenversicherung/arzneimittel/verhandlungen_nach_amnog/ebv_130b/ebv_nach_130b.jsp"
+    identifier_type: AMNOG_ENTRY
+    currency: EUR
+    documentary_status: "unverbindliche Information, keine amtliche Veröffentlichung"
+    options:
+      request_delay_seconds: 1.0
+
+  it_aifa:
+    country: IT
+    name: "AIFA – Elenchi farmaci di classe A e H"
+    adapter: it_aifa
+    enabled: true
+    expected_frequency: irregular
+    source_url: "https://www.aifa.gov.it/liste-farmaci-a-h"
+    identifier_type: AIC
+    currency: EUR
+
+  de_gba:
+    country: DE
+    name: "G-BA – historical pack-price disclosures"
+    adapter: de_gba
+    enabled: true
+    expected_frequency: irregular
+    source_url: "https://www.g-ba.de/bewertungsverfahren/nutzenbewertung/"
+    identifier_type: GBA_DISCLOSURE
+    currency: EUR
+    documentary_status: "Full historical catalogue discovery; PDF extraction remains layout-dependent with explicit exclusions. Dated substance/strength/pack disclosures, not a current national price list or identified PZN. No unique brand association inferred."
+
+  es_nomenclator:
+    country: ES
+    name: "Ministerio de Sanidad – Nomenclátor de Facturación"
+    adapter: es_nomenclator
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://www.sanidad.gob.es/profesionales/nomenclator.do"
+    identifier_type: CODIGO_NACIONAL
+    currency: EUR
+    documentary_status: "informative – only texts signed by DGFyPS are official (site disclaimer)"
+
+  es_cipm:
+    country: ES
+    name: "Ministerio de Sanidad – CIPM proposed industrial price disclosures"
+    adapter: es_cipm
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://www.sanidad.gob.es/areas/farmacia/precios/comisionInteministerial/acuerdosNotasInformativas/home.htm"
+    identifier_type: CIPM_DISCLOSURE
+    currency: EUR
+    documentary_status: "Informational, proposed maximum industrial prices. Not final/effective until definitive resolution and Nomenclator inclusion. National code preserved as group_code; disclosure IDs are not national product identifiers."
+
+  uk_dmd:
+    country: GB
+    name: "NHSBSA dm+d (dictionary of medicines and devices) via TRUD"
+    adapter: uk_dmd
+    enabled: true
+    expected_frequency: weekly
+    source_url: "https://isd.digital.nhs.uk/trud/users/guest/filters/0/categories/6/items/24/releases"
+    identifier_type: SNOMED_DMD
+    currency: GBP
+    options:
+      trud_item: 24
+
+  es_cima:
+    country: ES
+    name: "AEMPS CIMA – targeted hospital presentation reconciliation"
+    adapter: es_cima
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://cima.aemps.es/cima/rest/medicamentos"
+    identifier_type: CODIGO_NACIONAL
+    currency: EUR
+    documentary_status: "Product-only coverage, no prices or financing entitlement. Targeted medicine names, not a full Spanish market extract."
+    options:
+      medicine_names: ["dupixent", "keytruda", "opdivo", "humira", "lynparza"]
+
+  uk_drug_tariff:
+    country: GB
+    name: "NHSBSA Drug Tariff Part VIIIA (England & Wales)"
+    adapter: uk_drug_tariff
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/drug-tariff/drug-tariff-part-viii"
+    identifier_type: SNOMED_VMPP
+    currency: GBP
+    coverage_scope: "region:England+Wales"
+
+  jp_nhi:
+    country: JP
+    name: "MHLW – 薬価基準収載品目リスト (NHI Drug Price List)"
+    adapter: jp_nhi
+    enabled: true
+    expected_frequency: irregular
+    source_url: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000078916.html"
+    identifier_type: YJ_CODE
+    currency: JPY
+
+  br_cmed:
+    country: BR
+    name: "ANVISA / CMED – Lista de Preços de Medicamentos (PMC, PMVG)"
+    adapter: br_cmed
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/cmed/precos"
+    identifier_type: GGREM
+    currency: BRL
+    options:
+      icms_rates: ["0%", "18 %"]
+
+  ca_on_odb:
+    country: CA
+    name: "Ontario Drug Benefit Formulary / Comparative Drug Index (XML data extract)"
+    adapter: ca_on_odb
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://data.ontario.ca/dataset/ontario-drug-benefit-formulary-comparative-drug-index-formularycdi"
+    identifier_type: DIN
+    currency: CAD
+    coverage_scope: "province:ON"
+    options:
+      publication_page: "https://www.ontario.ca/document/ontario-drug-benefit-odb-formulary-comparative-drug-index-cdi-and-monthly-formulary-0"
+
+  ca_bc_pharmacare:
+    country: CA
+    name: "BC PharmaCare – downloadable benefit price data"
+    adapter: ca_bc_pharmacare
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://www2.gov.bc.ca/gov/content/health/practitioner-professional-resources/pharmacare/health-industry-professionals/downloadable-drug-data-files"
+    identifier_type: DIN_PIN
+    currency: CAD
+    coverage_scope: "province:BC"
+    documentary_status: "Provincial benefit ceilings per official unit and plan; not national retail prices. Zero price placeholders excluded."
+
+  ca_hc_dpd:
+    country: CA
+    name: "Health Canada – Drug Product Database (DPD) extract"
+    adapter: ca_hc_dpd
+    enabled: true
+    expected_frequency: monthly
+    source_url: "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database/what-data-extract-drug-product-database.html"
+    identifier_type: DIN
+    currency: CAD
+    documentary_status: "reference product master – contains no prices"
+
+  cn_nhsa:
+    country: CN
+    name: "China – drug price registration / VBP results (manual import)"
+    adapter: cn_nhsa
+    enabled: true
+    expected_frequency: irregular
+    source_url: "https://www.nhsa.gov.cn/"
+    identifier_type: CN_MANUAL
+    currency: CNY
+    documentary_status: "no documented public machine-readable source"
+
+  cn_vbp:
+    country: CN
+    name: "NHSA – public procurement price disclosures"
+    adapter: cn_vbp
+    enabled: true
+    expected_frequency: irregular
+    source_url: "https://www.nhsa.gov.cn/col/col148/index.html"
+    identifier_type: VBP_DISCLOSURE
+    currency: CNY
+    coverage_scope: "procurement:GY-YD2024-2"
+    documentary_status: "Historical proposed procurement prices only, not current final awards or retail prices. Publication and validity dates not established."
+    options:
+      documents:
+        - url: "https://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=859b442f26cd4a7497dd2d2020ed73cb.pdf"
+          batch: "GY-YD2024-2"
+          status: proposed
+
+  cn_gdmede:
+    country: CN
+    name: "Guangdong – public drug prices and historical disclosures"
+    adapter: cn_gdmede
+    enabled: false
+    expected_frequency: irregular
+    source_url: "https://www.gdmede.com.cn/announcement"
+    identifier_type: CN_NHSA_DRUG_CODE
+    currency: CNY
+    coverage_scope: "province:CN-GD"
+    documentary_status: "Internal research only; reuse restrictions apply. Complete public drug-notice/query pagination, original price-cell export and exclusion audit. Provincial disclosures, not current national tariffs or actual transactions."
+    options:
+      internal_research_acknowledged: true
+
+  cn_hubei:
+    country: CN
+    name: "Hubei – public drug admissions, awards and price adjustments"
+    adapter: cn_hubei
+    enabled: false
+    expected_frequency: irregular
+    source_url: "https://ybj.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/"
+    identifier_type: CN_NHSA_DRUG_CODE
+    coverage_scope: "province:CN-HB"
+    documentary_status: "Internal research only; reuse restrictions apply. Complete public archive enumeration; unavailable pages explicitly audited, optional ordinary-browser capture import. Original price cells retained; uncertain units are not normalized."
+    options:
+      internal_research_acknowledged: true
